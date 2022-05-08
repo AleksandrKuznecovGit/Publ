@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-func echoString(w http.ResponseWriter, r *http.Request) {
+func echoFunction(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Hello,Geekbrains")
 }
 
 func main() {
-	http.HandleFunc("/", echoString)
+	http.HandleFunc("/", echoFunction)
 
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "OK")
